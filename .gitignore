@@ -1,0 +1,148 @@
+# 🚀 Git Ignore Hands-On Lab
+
+## 📖 Overview
+
+This lab demonstrates how to use the `.gitignore` file in Git to exclude unwanted files and folders from version control. Ignoring unnecessary files helps keep repositories clean and prevents temporary or generated files from being committed.
+
+---
+
+## 🎯 Objectives
+
+- Understand the purpose of `.gitignore`
+- Learn how to ignore unwanted files
+- Learn how to ignore folders from Git tracking
+- Verify ignored files using Git status
+
+---
+
+## 🛠️ Prerequisites
+
+- Git installed and configured
+- Notepad++ configured as the default editor
+- Local Git repository available
+- GitHub/GitLab repository (optional)
+
+---
+
+## 📂 Files and Folders Created
+
+### Log File
+
+```text
+app.log
+```
+
+### Log Folder
+
+```text
+logs/
+└── error.log
+```
+
+---
+
+## ⚙️ .gitignore Configuration
+
+Create a `.gitignore` file and add:
+
+```text
+*.log
+logs/
+```
+
+### Explanation
+
+| Rule | Purpose |
+|--------|---------|
+| `*.log` | Ignores all log files |
+| `logs/` | Ignores the entire logs folder |
+
+---
+
+## 💻 Commands Used
+
+### Create Log File
+
+```bash
+echo Sample Log > app.log
+```
+
+### Create Log Folder
+
+```bash
+mkdir logs
+echo Error Log > logs/error.log
+```
+
+### Create .gitignore
+
+```bash
+notepad .gitignore
+```
+
+### Check Status
+
+```bash
+git status
+```
+
+### Add and Commit
+
+```bash
+git add .gitignore
+git commit -m "Added gitignore configuration"
+```
+
+---
+
+## ✅ Verification
+
+After configuring `.gitignore`, the following files should not appear in Git status:
+
+```text
+app.log
+logs/error.log
+logs/
+```
+
+Only `.gitignore` should be tracked.
+
+Example:
+
+```text
+On branch master
+nothing to commit, working tree clean
+```
+
+---
+
+## 📁 Repository Structure
+
+```text
+GitDemo
+│
+├── .gitignore
+├── README.md
+├── welcome.txt
+├── app.log      (ignored)
+└── logs/        (ignored)
+    └── error.log
+```
+
+---
+
+## 🎓 Learning Outcomes
+
+After completing this lab, I was able to:
+
+- Configure a `.gitignore` file
+- Ignore specific file types
+- Ignore directories
+- Verify ignored files using Git status
+- Maintain a clean Git repository
+
+---
+
+## ✅ Conclusion
+
+The `.gitignore` file is an important Git feature that prevents unnecessary files and folders from being tracked. This helps maintain an organized repository and improves version control management.
